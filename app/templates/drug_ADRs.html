@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+    {{title}}
+{% endblock %}
+{% block content %}
+    <div><a href= {{link}}>Predict targets</a></div>
+    <table>
+        <caption>{{drug}} Adverse reactions</caption>
+            <tr>
+                <th>ADR</th>
+                <th></th>
+                <th>Events reported</th>
+                <th></th>
+                <th>PRR</th>
+            </tr>
+            {% for ADR, stats in ADRS.items() %}
+            <tr>
+                <td>{{ADR}}</td><td></td><td>{{stats[0]}}</td><td></td><td>{{stats[1]}}</td>
+            </tr>
+            {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+{% for drug in drugs %}
+<div><a href= {{links[drug]}}>{{drug}}</a></div>
+{% endfor %}
+{% endblock %}

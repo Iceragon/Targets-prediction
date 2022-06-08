@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+<form action="" method="post">
+
+    {{ form.csrf_token() }}
+    
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+
+    {% for field in form if field.name != "csrf_token" %}
+    {% if field.name != "submit" %}
+	    <p>{{ field.label() }}</p>
+    {% endif %}
+	<p>{{ field }}
+	    {% for error in field.errors %}
+		    {{ error }}
+	    {% endfor %}
+	</p>
+    {% endfor %}
+
+</form>
+<div><a href = /all_drugs>View all drugs</a></div>
+</body>
+</html>

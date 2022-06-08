@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}
+    {{title}}
+{% endblock %}
+{% block content %}
+    <!-- <h1>{{drug}} possible targets</h1>
+    {% for target, prediction in targets.items() %}
+        <div><p>{{target}}: {{prediction}}</p></div>
+    {% endfor %} -->
+    <table>
+        <caption>{{drug}} possible targets</caption>
+            <tr>
+                <th>Target</th>
+                <th></th>
+                <th>Active or not</th>
+            </tr>
+            {% for target, prediction in targets.items() %}
+            <tr>
+                <td>{{target}}</td>
+                <td></td>
+                <td>{{prediction}}</td>
+            </tr>
+            {% endfor %}
+    </table>
+{% endblock %}
